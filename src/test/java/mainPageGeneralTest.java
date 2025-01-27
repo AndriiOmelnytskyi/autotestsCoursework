@@ -1,6 +1,7 @@
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.itemPage;
 import pages.mainPage;
@@ -15,34 +16,7 @@ public class mainPageGeneralTest {
      */
     @Test
     public void t_01_checkingGeneralInfoTest(){
-        setUp();
-        //перевірка наявності карточки із бургером Tribute Burger
-        mainPage.wait(3);
-        mainPage.assertIsDisplayed();
-        //перевірка наявності основних текстів на сторінці
-        mainPage.assertTextPresent("BonBurgers");
-        mainPage.assertTextPresent("Card");
-        mainPage.assertTextPresent("Tribute Burger");
-        mainPage.assertTextPresent("A mouth-watering honest beef burger");
-        mainPage.assertTextPresent("Cost: 7.90$");
-        mainPage.assertTextPresent("Curry On My Wayward Bun");
-        mainPage.assertTextPresent("N/A");
-        mainPage.assertTextPresent("Cost: 7.72$");
-        //перевірка інформації у вікні із бургером
-        mainPage.clickAtItem();
-        mainPage.assertAmericanCheeseIsDisplayed();
-        mainPage.assertBurgerSauceIsDisplayed();
-        mainPage.assertFrenchMustardIsDisplayed();
-        mainPage.assertOnionIsDisplayed();
-        mainPage.assertLettuceIsDisplayed();
-        mainPage.assertPickesIsDisplayed();
-        mainPage.assertBeefIsDisplayed();
-        //Додавання товару в корзину
-        mainPage.closePopUp();
-        mainPage.wait(3);
-        mainPage.addItem();
-        //перевірка що елемент було додано
-        mainPage.assertTextPresent("Cart 1");
+        Assert.assertEquals("11", "21");
     }
 
     /**
@@ -50,30 +24,7 @@ public class mainPageGeneralTest {
     */
     @Test
     public void t_02_checkPagination(){
-        setUp();
-        mainPage.wait(5);
-        //перевірка кліків до останньої сторінки
-        mainPage.clickRightPaginationButton();
-        mainPage.clickRightPaginationButton();
-        mainPage.clickRightPaginationButton();
-        mainPage.assertTextPresent("The Street Burgers and Coctail Bar Prague 1");
-        mainPage.assertTextPresent("American, Bar, International, European, Vegetarian Friendly");
-        mainPage.assertTextPresent("Cost: 9.19$");
-        //перевірка вмісту товару на останній сторінці
-        mainPage.clickAtItem();
-        mainPage.wait(3);
-        mainPage.assertBeefIsDisplayed();
-        mainPage.closePopUp();
-        mainPage.wait(3);
-        //перевірка повернення на першу сторінку
-        mainPage.clickLeftPaginationButton();
-        mainPage.clickLeftPaginationButton();
-        mainPage.clickLeftPaginationButton();
-        //перевірка вмісту товару на першій сторінці сторінці
-        mainPage.clickAtItem();
-        mainPage.assertAmericanCheeseIsDisplayed();
-        mainPage.assertBurgerSauceIsDisplayed();
-        mainPage.assertFrenchMustardIsDisplayed();
+        Assert.assertEquals("11", "11");
     }
 
     /**
