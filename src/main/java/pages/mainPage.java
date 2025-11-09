@@ -93,4 +93,6 @@ public class mainPage extends basePage {
     public void wait(int seconds){
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(seconds));
     }
+
+
 }
